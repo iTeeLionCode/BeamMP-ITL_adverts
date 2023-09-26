@@ -1,0 +1,12 @@
+{
+    "delay": "5",
+    "random": true,
+    "onlineUsersOnly": true,
+    "messages": [
+        "Test msg 1",
+        "Test msg 2",
+        "Test msg 3",
+        "Test msg 4",
+        "Test msg 5"
+    ]
+}
