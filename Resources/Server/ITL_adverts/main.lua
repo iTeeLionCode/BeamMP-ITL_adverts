@@ -1,4 +1,4 @@
-local pluginName = "ITLadverts"
+local pluginName = "ITL_adverts"
 local pluginVersion = "0.0.1"
 
 local CFG = require("cfg")
