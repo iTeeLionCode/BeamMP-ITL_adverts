@@ -1,14 +1,8 @@
-local pluginName = "ITL_adverts"
-local pluginVersion = "0.0.1"
+pluginName = "ITLadverts"
+pluginVersion = "0.0.2"
+lastMessage = 1
 
-local CFG = require("cfg")
-
-local config = CFG.getLocal("main")
-
-function sleep(seconds)
-    local ntime = os.time() + seconds
-    repeat until os.time() > ntime
-end
+CFG = require("cfg")
 
 function getPlayersCount()
     local count = 0
@@ -24,15 +18,15 @@ end
 function sendMessage(row)
     local usersCount = getPlayersCount();
 
-    if (usersCount > 0 and config.onlineUsersOnly == true) or config.onlineUsersOnly == false then
-        if config.random == true then
-            row = math.random(1, #config.messages)
+    if (usersCount > 0 and pluginConfig.onlineUsersOnly == true) or pluginConfig.onlineUsersOnly == false then
+        if pluginConfig.random == true then
+            row = math.random(1, #pluginConfig.messages)
         end
     
-        MP.SendChatMessage(-1, config.messages[row])
+        MP.SendChatMessage(-1, pluginConfig.messages[row])
     
         row = row + 1
-        if row > #config.messages then
+        if row > #pluginConfig.messages then
             row = 1
         end
     end
@@ -40,16 +34,14 @@ function sendMessage(row)
     return row
 end
 
-function runMessagesLoop()
-    local row = 1
-    while true do
-        row = sendMessage(row)
-        sleep(config.delay)
-    end
-end
-
 function onInit()
+    pluginConfig = CFG.getLocal("main")
 
+    function SendMessageLoop()
+        lastMessage = sendMessage(lastMessage)
+    end
+
+    MP.RegisterEvent("SendMessageLoopHandler", "SendMessageLoop")
+
+    MP.CreateEventTimer("SendMessageLoopHandler", pluginConfig.delay * 1000)
 end
-
-runMessagesLoop()

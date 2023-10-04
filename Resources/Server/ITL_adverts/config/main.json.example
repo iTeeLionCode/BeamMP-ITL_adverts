@@ -1,5 +1,5 @@
 {
-    "delay": "5",
+    "delay": 300,
     "random": true,
     "onlineUsersOnly": true,
     "messages": [
