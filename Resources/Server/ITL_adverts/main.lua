@@ -37,11 +37,11 @@ end
 function onInit()
     pluginConfig = CFG.getLocal("main")
 
-    function SendMessageLoop()
+    function SendMessageLoopTimerHandler()
         lastMessage = sendMessage(lastMessage)
     end
 
-    MP.RegisterEvent("SendMessageLoopHandler", "SendMessageLoop")
+    MP.RegisterEvent("SendMessageLoopTimer", "SendMessageLoopTimerHandler")
 
-    MP.CreateEventTimer("SendMessageLoopHandler", pluginConfig.delay * 1000)
+    MP.CreateEventTimer("SendMessageLoopTimer", pluginConfig.delay * 1000)
 end
