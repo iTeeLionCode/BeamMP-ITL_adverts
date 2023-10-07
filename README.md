@@ -1,4 +1,4 @@
-# BeamMP_adverts
+# BeamMP-ITL_adverts
 
 This is a simple serverside plugin for BeamMP that displays advertising messages in the chat.
 
