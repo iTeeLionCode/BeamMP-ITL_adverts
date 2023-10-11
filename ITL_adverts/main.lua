@@ -50,8 +50,6 @@ function onInit()
 
     pluginConfig = CFG.getLocal("main.config.json")
 
-    print(pluginConfig)
-
     function SendMessageLoopTimerHandler()
         lastMessage = sendMessage(lastMessage)
     end
