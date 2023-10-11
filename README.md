@@ -2,18 +2,19 @@
 
 This is a simple serverside plugin for BeamMP that displays advertising messages in the chat.
 
-## Plugin installation
+[README на русском](/README.ru.md)
 
-- Drop folfer "Resources" in to root directory of your server
-- Copy config example "Resources/Server/ITL_adverts/config/main.json.example" to the same place with name "main.json" and cofigure it
+## Plugin installation & update
 
-## Plugin update
-
-- Drop folder "Resources" in to root directory of your server
+- Simple drag&drop "ITL_adverts" folder in to "Resources/Server" directory of your server
 
 ## Configuring
 
-All confugiration stored in file: "Resources/Server/ITL_adverts/config/main.json"
+All confugiration stored in file: "Resources/Server/ITL_adverts/config/main.config.json"
+
+It is HIGHLY RECOMMENDED to create a config override. Simply copy the "main.config.json" file and name the new file "override_main.config.json". This allows you to update the plugin by easily dragging and dropping the folder, and prevents the config from being overwritten. The override file may contain only the necessary rows, as any missing parameters will be taken from the original "main.config.json" file.
+
+Explanation of config rows:
 ```
 {
     "// A message will be sent once every such number of seconds",
@@ -29,10 +30,14 @@ All confugiration stored in file: "Resources/Server/ITL_adverts/config/main.json
     "messages": [
         "Test msg 1",
         "Test msg 2",
-        "Test msg 3",
+        "// Oh, this is a message group, both (or more) messages would send together at the same time",
+        [
+            "ITL_advert sample message group 2, message 1",
+            "ITL_advert sample message group 2, message 2"
+        ],
         "Test msg 4",
         "Test msg 5"
     ]
 }
 ```
-p.s. Please do not copy that examle to your main config, that's dirty... use main.json.example
+p.s. Please do not copy that examle to your main config, that's dirty...
