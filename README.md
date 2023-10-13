@@ -1,6 +1,6 @@
 README: [🇺🇸](/README.md) | [🇷🇺](/README.ru.md)
 
-# BeamMP ITL_adverts
+# ITL_adverts
 
 This is a simple serverside plugin for BeamMP that displays advertising messages in the chat.
 
