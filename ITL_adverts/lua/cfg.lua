@@ -12,7 +12,7 @@ local function readFile(path)
     end
 end
 
-function MODULE.get(filePath)
+function MODULE.getGlobal(filePath)
     local config = nil
 
     if (FS.IsFile(filePath)) then
@@ -30,9 +30,9 @@ function MODULE.get(filePath)
     return config
 end
 
-function MODULE.getLocal(fileName)
+function MODULE.get(fileName)
     local filePath = pluginPath .. fileName
-    return MODULE.get(filePath)
+    return MODULE.getGlobal(filePath)
 end
 
 return MODULE

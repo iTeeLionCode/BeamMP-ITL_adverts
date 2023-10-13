@@ -3,17 +3,13 @@
     "random": true,
     "onlineUsersOnly": true,
     "messages": [
-        "ITL_adverts sample message 1",
         [
             "ITL_adverts sample message group 1, message 1",
             "ITL_adverts sample message group 1, message 2"
         ],
-        "ITL_adverts sample message 2",
-        "ITL_adverts sample message 3",
         [
             "ITL_adverts sample message group 2, message 1",
             "ITL_adverts sample message group 2, message 2"
-        ],
-        "ITL_adverts sample message 4"
+        ]
     ]
 }

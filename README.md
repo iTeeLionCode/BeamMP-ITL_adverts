@@ -1,8 +1,8 @@
-# BeamMP-ITL_adverts
+README: {🇺🇸](/README.md) | [🇷🇺](/README.ru.md)
+
+# BeamMP ITL_adverts
 
 This is a simple serverside plugin for BeamMP that displays advertising messages in the chat.
-
-[README на русском](/README.ru.md)
 
 ## Plugin installation & update
 
@@ -16,28 +16,24 @@ It is HIGHLY RECOMMENDED to create a config override. Simply copy the "main.conf
 
 Explanation of config rows:
 ```
-{
-    "// A message will be sent once every such number of seconds",
-    "delay": 5,
-    
-    "// Send random message every time or one by one",
-    "random": true,
-    
-    "// Send messages only if at least one user online",
-    "onlineUsersOnly": false,
-    
-    "// A list of messages",
-    "messages": [
-        "Test msg 1",
-        "Test msg 2",
-        "// Oh, this is a message group, both (or more) messages would send together at the same time",
-        [
-            "ITL_advert sample message group 2, message 1",
-            "ITL_advert sample message group 2, message 2"
-        ],
-        "Test msg 4",
-        "Test msg 5"
-    ]
-}
+    "delay": 5 // A message will be sent once every such number of seconds
+    "random": true // Send random message every time or one by one
+    "onlineUsersOnly": false // Send messages only if at least one user online
+    "messages": [] // A list of messages"
 ```
-p.s. Please do not copy that examle to your main config, that's dirty...
+"messages" can cointain bunch of single messages and/or bunch of group of messages:
+```
+    "just a message" // single message
+
+    или
+
+    [
+        "first msg",
+        "second msg"
+    ] // messages group
+```
+p.s. Please do not copy that text in to config file, comments would broke it!
+
+## Thanks
+
+[csv4211](https://github.com/csv4211) and [STRMBRG](https://github.com/STRMBRG) for helping with docs and testing
