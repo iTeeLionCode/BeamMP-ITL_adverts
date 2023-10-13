@@ -1,4 +1,4 @@
-README: {🇺🇸](/README.md) | [🇷🇺](/README.ru.md)
+README: [🇺🇸](/README.md) | [🇷🇺](/README.ru.md)
 
 # BeamMP-ITL_adverts
 
